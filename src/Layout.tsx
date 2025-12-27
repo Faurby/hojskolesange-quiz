@@ -1,5 +1,6 @@
 import type { ReactNode } from "react";
 import { useNavigate } from "react-router-dom";
+import { Analytics } from "@vercel/analytics/next";
 
 type LayoutProps = {
   children: ReactNode;
@@ -21,6 +22,7 @@ export default function Layout({ children }: LayoutProps) {
       {/* Page content */}
       <div className="flex items-center justify-center min-h-screen">
         {children}
+        <Analytics />
       </div>
     </div>
   );
